@@ -13,17 +13,10 @@ By opening a pull request, you agree to all of the following:
 1. **You have the right to contribute this code.**
    You are either the original author of the contribution, or you have obtained the necessary rights/permissions to contribute it under these terms.
 
-2. **Dual licensing permission.**
+2. **Licensing.**
    You agree that your contribution may be:
    - merged into this repository, and
-   - used, copied, modified, sublicensed, and redistributed
-     - under the AGPLv3 Community Edition, and
-     - under any proprietary / commercial / Enterprise editions of this project,
-       now or in the future.
-
-   In other words: you are granting the project maintainer(s) the right to include
-   your contribution in both the open-source (AGPLv3) codebase and in closed-source /
-   commercially licensed builds, without any additional approval or payment.
+   - used, copied, modified, sublicensed, and redistributed under the AGPLv3
 
 3. **Attribution.**
    The maintainers may keep or add attribution lines such as
@@ -35,14 +28,6 @@ By opening a pull request, you agree to all of the following:
    Submitting a pull request does *not* create any support obligation,
    service-level agreement, warranty, or guarantee that the contribution
    will be reviewed, merged, or maintained.
-
-5. **Potential rejection for business reasons.**
-   Features that fall under "Enterprise / Commercial" functionality
-   (e.g. multi-tenant provisioning at scale, centralized audit trails,
-   corporate policy enforcement, attestation/branding flows, key escrow / dual-control,
-   etc.) may be declined for the public AGPLv3 tree even if technically valid.
-   That is normal: some functionality is intentionally offered only
-   under commercial terms.
 
 If you are not comfortable with these terms, **do not open a pull request yet.**
 Instead, please open an Issue to start a discussion.
@@ -76,9 +61,6 @@ Please keep PRs focused (one logical change per PR if possible).
   - impact on existing flows / security model
   - any new dependencies
 
-This helps avoid doing a bunch of work on something that won't be accepted
-in the Community Edition.
-
 ### 4. Coding style / security posture
 - Aim for clarity and small, auditable changes. This code runs in places
   where secrets live.
@@ -91,7 +73,7 @@ in the Community Edition.
 - In the PR description, please include a short summary of what was changed and why.
 - At the bottom of the PR description, **copy/paste and confirm the licensing line below**:
 
-  > I confirm that I have read `CONTRIBUTING.md` and I agree that this contribution may be used under both the AGPLv3 Community Edition and any proprietary / commercial / Enterprise editions of this project, now or in the future.
+  > I confirm that I have read `CONTRIBUTING.md` and I agree to its terms
 
 A PR without that confirmation may be delayed or closed without merge.
 
