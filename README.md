@@ -84,11 +84,11 @@ git submodule update --init --recursive
 cd pico-fido2
 mkdir build
 cd build
-PICO_SDK_PATH=/path/to/pico-sdk cmake .. -DPICO_BOARD=board_type -DUSB_VID=0x1234 -DUSB_PID=0x5678
+PICO_SDK_PATH=/path/to/pico-sdk cmake .. -DPICO_BOARD=board_type -DUSB_VID=0x1D50 -DUSB_PID=0x619B
 make
 ```
 
-Note that `PICO_BOARD`, `USB_VID` and `USB_PID` are optional. If not provided, `pico` board and VID/PID `FEFF:FCFD` will be used.
+Note that `PICO_BOARD`, `USB_VID` and `USB_PID` are optional. If not provided, `pico` board and VID/PID `1D50:619B` will be used.
 
 Additionally, you can pass the `VIDPID=value` parameter to build the firmware with a known VID/PID. The supported values are:
 
@@ -104,6 +104,7 @@ Additionally, you can pass the `VIDPID=value` parameter to build the firmware wi
 - `GnuPG`
 
 You can use whatever VID/PID for your own personal use. **But remember that you are not authorized to distribute the binary with a VID/PID that you do not own.**
+The VID/PID `1D50:619B` is provided to the project by [OpenMoko](https://wiki.openmoko.org/wiki/USB_Product_IDs). It can only be used for builds distributed under a free and open source license.
 
 After running `make`, the binary file `pico_fido2.uf2` will be generated. To load this onto your Pico board:
 
