@@ -2,11 +2,7 @@
 
 Thank you for your interest in contributing to this project.
 
-This repository is published in two forms:
-- a Community Edition released under AGPLv3, and
-- a proprietary / commercial / Enterprise Edition offered to organizations.
-
-To keep that model legally clean, we need to be explicit about how contributions can be used.
+This repository is published under AGPLv3
 
 By opening a pull request, you agree to all of the following:
 
