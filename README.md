@@ -6,6 +6,30 @@ This is a fork of the last community edition version of the pico-fido2 firmware,
 
 ---
 
+## Supported platforms
+
+| | RP2040 | RP2350 | ESP32-S2 | ESP32-S3 |
+|---|---|---|---|---|
+| CPU | 2x Cortex-M0+ | 2x Cortex-M33 | 1x Xtensa | 2x Xtensa |
+| Core pinning | Yes  | Yes | No  | Yes |
+| RTOS | No (Pico SDK) | No (Pico SDK) | FreeRTOS | FreeRTOS |
+| MCU ID | `0` | `1` | `2` | `2` |
+
+### Security
+
+Currently most secure features are supported and implemented only for RP2350.
+
+| | RP2350 | RP2040 | ESP32-S2 | ESP32-S3 |
+|---|---|---|---|---|
+| Secure Boot | Full (boot key hash, CRIT1 flags, debug disable, glitch detector) | No HW support | No (`// TODO`) | No (`// TODO`) |
+| Secure Lock | Yes (key invalidation, page locking) | No | No | No |
+| MKEK in OTP/eFuse | Yes (OTP rows with ECC, chaff, page locking) | No (plaintext flash) | Yes (eFuse `BLK_KEY3`, write-locked) | Yes (eFuse `BLK_KEY3`, write-locked) |
+| Device key in OTP/eFuse | Yes (OTP + chaff + migration) | No | Yes (eFuse `BLK_KEY4`) | Yes (eFuse `BLK_KEY4`) |
+| `cmd_secure` APDU | Available | Not available | Available | Available |
+| Firmware signing | Yes (`pico_sign_binary`) | No | No | No |
+| Rollback protection | Yes | No | No | No |
+| HW crypto | SHA-256	| No | SHA-256 + AES-GCM + ECDSA/ECDH | SHA-256 + AES-GCM + ECDSA/ECDH |
+
 ## Features
 
 Pico FIDO2 includes the following features:
