@@ -20,7 +20,15 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          submodules: 'recursive'
+          # 1. 关键：设置为 false，防止在 checkout 阶段因为找不到 commit 而报错
+          submodules: false
+          fetch-depth: 0
+
+      - name: Force update submodules to latest
+        # 2. 关键：手动初始化并强制拉取子模块远程分支的最新代码
+        run: |
+          git submodule init
+          git submodule update --remote --recursive
 
       - name: Install dependencies
         run: |
@@ -29,6 +37,7 @@ jobs:
 
       - name: Clone and build pico-sdk
         run: |
+          # 提示：如果你的项目频繁构建，建议将 pico-sdk 也作为子模块或使用 cache 优化
           git clone https://github.com/raspberrypi/pico-sdk
           cd pico-sdk
           git checkout tags/2.1.1
@@ -41,6 +50,7 @@ jobs:
         run: |
           mkdir -p build_ci
           cd build_ci
+          # 针对 RP2350 的编译配置
           cmake .. -DPICO_BOARD=${{ matrix.board }} -DPICO_PLATFORM=rp2350-arm-s
           make -j$(nproc)
 
