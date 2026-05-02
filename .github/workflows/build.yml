@@ -1,4 +1,4 @@
-name: "Build Pico2 FIDO2"
+name: "Build"
 
 on:
   push:
@@ -9,13 +9,12 @@ on:
 
 jobs:
   build:
-    name: Build for RP2350 (Pico2)
+    name: Build ${{ matrix.board }}
     strategy:
       fail-fast: false
       matrix:
-        board: [pico2]
+        board: [weact_studio_rp2040_16mb]
     runs-on: ubuntu-latest
-    
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -41,11 +40,11 @@ jobs:
         run: |
           mkdir -p build_ci
           cd build_ci
-          cmake .. -DPICO_BOARD=${{ matrix.board }} -DPICO_PLATFORM=rp2350-arm-s
+          cmake .. -DPICO_BOARD=${{ matrix.board }}
           make -j$(nproc)
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: pico2_fido2_firmware
+          name: pico_fido2_${{ matrix.board }}
           path: build_ci/pico_fido2.uf2
