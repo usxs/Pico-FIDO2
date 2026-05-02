@@ -1,5 +1,5 @@
-
-# Pico FIDO2 项目指南
+# Pico FIDO2 
+[English](https://github.com/usxs/Pico-FIDO2) | 简体中文
 
 本项目致力于将您的 **Raspberry Pi RP235x** 或 **ESP32** 微控制器，锻造成集 **FIDO Passkey** 与 **OpenPGP 智能卡** 于一体的安全利器。它既能作为标准的 USB 通行密钥（Passkey）进行身份验证，亦可作为智能卡处理各类加密任务。
 

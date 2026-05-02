@@ -1,4 +1,5 @@
 # Pico FIDO2
+English | [简体中文](https://github.com/usxs/Pico-FIDO2/blob/main/README_CN.md)
 
 This project transforms your Raspberry RP235x or ESP32 microcontroller into an integrated FIDO Passkey **and** OpenPGP smartcard, functioning like a standard USB Passkey for authentication and as a smartcard for cryptographic operations.
 
